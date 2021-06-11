@@ -1,4 +1,6 @@
+#ifndef MINIZ_EXPORT
 #define MINIZ_EXPORT
+#endif
 /* miniz.c 2.1.0 - public domain deflate/inflate, zlib-subset, ZIP reading/writing/appending, PNG writing
    See "unlicense" statement at the end of this file.
    Rich Geldreich <richgel99@gmail.com>, last updated Oct. 13, 2013
@@ -564,9 +566,9 @@ typedef struct mz_dummy_time_t_tag
 extern "C" {
 #endif
 
-extern MINIZ_EXPORT void *miniz_def_alloc_func(void *opaque, size_t items, size_t size);
-extern MINIZ_EXPORT void miniz_def_free_func(void *opaque, void *address);
-extern MINIZ_EXPORT void *miniz_def_realloc_func(void *opaque, void *address, size_t items, size_t size);
+MINIZ_EXPORT void *miniz_def_alloc_func(void *opaque, size_t items, size_t size);
+MINIZ_EXPORT void miniz_def_free_func(void *opaque, void *address);
+MINIZ_EXPORT void *miniz_def_realloc_func(void *opaque, void *address, size_t items, size_t size);
 
 #define MZ_UINT16_MAX (0xFFFFU)
 #define MZ_UINT32_MAX (0xFFFFFFFFU)
@@ -4436,7 +4438,7 @@ static FILE *mz_freopen(const char *pPath, const char *pMode, FILE *pStream)
 #define MZ_DELETE_FILE remove
 
 #else
-#pragma message("Using fopen, ftello, fseeko, stat() etc. path for file I/O - this path may not support large files.")
+/*#pragma message("Using fopen, ftello, fseeko, stat() etc. path for file I/O - this path may not support large files.")*/
 #ifndef MINIZ_NO_TIME
 #include <utime.h>
 #endif
