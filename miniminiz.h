@@ -113,7 +113,7 @@
      uses the 64-bit variants: fopen64(), stat64(), etc. Otherwise you won't be able to process large files
      (i.e. 32-bit stat() fails for me on files > 0x7FFFFFFF bytes).
 */
-#pragma once
+
 
 
 
@@ -483,7 +483,7 @@ typedef void *const voidpc;
 
 
 
-#pragma once
+
 #include <assert.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -576,7 +576,7 @@ MINIZ_EXPORT void *miniz_def_realloc_func(void *opaque, void *address, size_t it
 #ifdef __cplusplus
 }
 #endif
- #pragma once
+
 
 
 #ifdef __cplusplus
@@ -766,7 +766,7 @@ MINIZ_EXPORT void tdefl_compressor_free(tdefl_compressor *pComp);
 #ifdef __cplusplus
 }
 #endif
- #pragma once
+
 
 /* ------------------- Low-level Decompression API Definitions */
 
@@ -911,7 +911,7 @@ struct tinfl_decompressor_tag
 }
 #endif
 
-#pragma once
+
 
 
 /* ------------------- ZIP archive reading/writing */
